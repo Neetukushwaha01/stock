@@ -1,0 +1,97 @@
+
+**please update video first**
+
+Project Website Description:
+
+Project Name :stockmarket 
+App Name :stock
+
+create a project with name 'stockmarket' with command and create new app with name 'stock'
+inside of project
+
+django-admin startproject stockmarket
+cd  stockmarket
+python manage.py startapp stock
+
+also migrate existing build in models
+
+python manage.py migrate 
+
+
+
+Models
+  model name : Stack  
+  fields : id,stock_name,video,desc,slug
+	id: is unique field fields store auto Increment primary key
+	stock_name: fields is name of stock charfields with limit 100 words
+	video: fields is store path of video file and store media inside of 
+	path_name =/media/upload/video
+	desc fields for description TextField type also accept charfield data
+
+	slug: slug is unique text which for get details url path
+	slug field is accept without space or some slug features
+	note slug fiels store stock_name value as slug field
+
+
+then run comaand:
+python manage.py makemigations
+python manage.py migrate
+
+
+note: migrate command use for schema to convet table and also make new 0001initial.py file
+inside of makemigrations folder
+
+
+and also create a superuser for admin access
+python manange.py createsuperuser
+username:admin
+email:
+password: admin
+repeat password : admin
+
+then
+register our model in admin section 
+#admin.py
+# import admin modules
+#import our model here
+#register
+
+from django.contrib import admin
+from .models import Stack
+admin.site.register(Stack)
+
+then go admin section and 10 stock
+http://127.0.0.1:8000/admin/
+
+show in listing of stock 
+- create templates (collection of html file)
+then 
+create a funstion to run html page
+models table to get query
+- stack.object.all()
+
+
+then create urls.py to path in funstion name
+
+media setting 
+- setting .py  to  using os mudule to run media  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+  
+

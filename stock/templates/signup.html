@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+{% block content%}
+
+<div class="m-auto col-md-4 bg-white mt-4 p-4 bordered shadow">
+    <div class=" text-danger text-center">{{msg}}</div>
+
+    <h5 class="my-2">SignUp Here</h5>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Enter username" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="email" placeholder="Enter Email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Enter password" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control"> SignUp</button>
+        </div>
+
+
+    </form>
+
+<div class="m-auto w-28 bg-white">
+    <a href="/"> You have a Account ?</a>
+    <div class="form-group"><a href="/login" class="btn btn-info form-control">Login Here</a></div>
+</div>
+
+</div>
+
+{% endblock%}
